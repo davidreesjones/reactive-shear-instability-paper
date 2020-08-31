@@ -1,0 +1,9 @@
+par.theta1 = pi/2-0.2*pi; % pi/2 - dip of lithosphere
+par.n=2; % exponent in porosity-permeability relationship
+par.lambda_s=26; % coefficient in negative exponential relationship for shear viscosity (Mei et al 2002)
+par.zeta_r=5/3; % zet0/eta0
+par.F_max=0.2; % maximum degree of melting
+par.Q_rel=6.3e4; % Q_0/U_0
+par.beta_s=0.2; % beta*H/alpha
+C= par.theta1 - sin(par.theta1)*cos(par.theta1);
+Theta = @(theta) (theta.*cos(theta)-sin(theta)*(cos(par.theta1))^2)/C;
