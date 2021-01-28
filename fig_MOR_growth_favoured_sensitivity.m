@@ -120,7 +120,7 @@ for J=1:3
                 cbar=colorbar;
                 cbar.Location= 'eastoutside';
                 cbar.LineWidth=LW{2};
-                cbar.FontSize=FSs{2};
+                cbar.FontSize=FSm{2};
                 cbar.TickLabelInterpreter=TX{2};
                 if J==1
                     cbar.Limits=[-20 20];
@@ -138,19 +138,21 @@ for J=1:3
         ax=gca;
         ax.XTick=[0:0.5:1.5];
         ax.YTick=[-1:0.5:0];
-        ax.FontSize=FSs{2};
+        ax.FontSize=FSm{2};
         ax.TickLabelInterpreter=TX{2};
         ax.LineWidth=LW{2};
         if K==1
-            ylab=ylabel('$\frac{z}{H}$',TX{:},FSm{:},'Rotation',0);
+            ylab=ylabel('$\frac{z}{H}$',TX{:},FSl{:},'Rotation',0);
             ylab.Position(1:2)=[-0.1 -0.3];
         end
-        xlab=xlabel('$\frac{x}{H}$',TX{:},FSm{:});
-        xlab.Position(2)=-1.02;
+        if J==3
+            xlab=xlabel('$\frac{x}{H}$',TX{:},FSl{:});
+            xlab.Position(2)=-1.07;
+        end
     end
-    title1.FontSize=12;
-    title2.FontSize=12;
-    title3.FontSize=12;
+    title1.FontSize=14;
+    title2.FontSize=14;
+    title3.FontSize=14;
     t1.TileSpacing='compact';
     t1.Padding='compact';
     drawnow

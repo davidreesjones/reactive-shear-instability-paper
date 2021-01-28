@@ -12,7 +12,7 @@ colormap(gca,cmap_BG)
 cbar=colorbar;
 cbar.Location= 'eastoutside';
 cbar.LineWidth=LW{2};
-cbar.FontSize=FSs{2};
+cbar.FontSize=FSm{2};
 cbar.TickLabelInterpreter=TX{2};
 cbar.Limits=[-0.5 1];
 cbar.Ticks=[-0.5 0 0.5 1 2];
@@ -36,11 +36,11 @@ for I=1:numel(Mxc)
 end
 ax.XTick=[0:0.5:1.5];
 ax.YTick=[-1:0.5:0];
-ax.FontSize=FSs{2};
+ax.FontSize=FSm{2};
 
 %xlab=xlabel('$\frac{x}{H}$',TX{:},FSm{:});
 %xlab.Position(2)=-1.02;
-ylab=ylabel('$\frac{z}{H}$',TX{:},FSm{:},'Rotation',0);
+ylab=ylabel('$\frac{z}{H}$',TX{:},FSl{:},'Rotation',0);
 ylab.Position(1:2)=[-0.1 -0.3];
 
 title('Normalized strain rate $\dot{\gamma}_0/(U_0/H)$',TX{:},FSm{:})
@@ -80,10 +80,18 @@ for J=1:3
     cbar=colorbar;
     cbar.Location= 'eastoutside';
     cbar.LineWidth=LW{2};
-    cbar.FontSize=FSs{2};
+    cbar.FontSize=FSm{2};
     cbar.TickLabelInterpreter=TX{2};
     cbar.Limits=[levels(1) levels(end-2)];
     cbar.Ticks=levels(1:4:end);
+%     if J==2
+%         cbar.Limits=[0 2.4e-3];
+%         cbar.Ticks=[0 1e-3 2e-3];
+%         cbar.TickLabels{1}='0';
+%         cbar.TickLabels{2}='$1 \times 10^{-3}$';
+%         cbar.TickLabels{3}='$2 \times 10^{-3}$';
+%     end
+    
     if J==3
         cbar.Limits=[-1 1];
         cbar.Ticks=-1:1:1;
@@ -99,33 +107,33 @@ for J=1:3
     plot([0 1/tan(pi/2-par.theta1)],[0 -1],'k',LW{:});
     ax.XTick=[0:0.5:1.5];
     ax.YTick=[-1:0.5:0];
-    ax.FontSize=FSs{2};
+    ax.FontSize=FSm{2};
     
     switch J
         case 1
             title('Normalized magma velocity: $w_0/U_0$',TX{:},FSm{:});
-            text(1.39,-0.06,'(b)',TX{:},FSm{:});
+            text(1.39,-0.06,'(b)',TX{:},FSl{:});
         case 2
             title('Porosity: $\phi_0$',TX{:},FSm{:});
             text(1.39,-0.06,'(c)',TX{:},FSm{:});
-            xlab=xlabel('$\frac{x}{H}$',TX{:},FSm{:});
+            xlab=xlabel('$\frac{x}{H}$',TX{:},FSl{:});
             xlab.Position(2)=-1.02;
-            ylab=ylabel('$\frac{z}{H}$',TX{:},FSm{:},'Rotation',0);
+            ylab=ylabel('$\frac{z}{H}$',TX{:},FSl{:},'Rotation',0);
             ylab.Position(1:2)=[-0.1 -0.3];
         case 3
             title('Ratio of shear to reactive growth rate: $S$',TX{:},FSm{:});
             text(1.39,-0.06,'(d)',TX{:},FSm{:});
-            xlab=xlabel('$\frac{x}{H}$',TX{:},FSm{:});
+            xlab=xlabel('$\frac{x}{H}$',TX{:},FSl{:});
             xlab.Position(2)=-1.02;
     end
     ax.TickLabelInterpreter=TX{2};
     ax.LineWidth=LW{2};
 end
-t1.TileSpacing='compact';
+%t1.TileSpacing='compact';
 t1.Padding='compact';
 drawnow
 
 f1.WindowStyle='normal';
 f1.Units=UN{2};
-f1.Position=[0 0 20 13];
+f1.Position=[0 0 20 13.5];
 print(strcat(path_spec,'MOR_base_state'),output_format)

@@ -92,9 +92,9 @@ for J=1:4
         axis equal
         box on
         ax=gca;
-        ax.XTick=[0:0.5:3.5];
-        ax.YTick=[-1:0.5:0];
-        ax.FontSize=FSs{2};
+        ax.XTick=[0:3.5];
+        ax.YTick=[-1:0];
+        ax.FontSize=FSm{2};
         ax.TickLabelInterpreter=TX{2};
         ax.LineWidth=LW{2};
         if K==1
@@ -112,33 +112,33 @@ for J=1:4
                     %title('$s_\mathrm{shear}$',TX{:},FSm{:});
                     text(2.0,-0.2,'(d): $\theta_0=-\pi/4$',TX{:},FSm{:});
             end
-            ylab=ylabel('$\frac{z}{H}$',TX{:},FSm{:},'Rotation',0);
-            ylab.Position(1:2)=[-0.1 -0.4];
+            ylab=ylabel('$\frac{z}{H}$',TX{:},FSl{:},'Rotation',0);
+            ylab.Position(1:2)=[-0.2 -0.65];
         end
         if J==4
-            xlab=xlabel('$\frac{x}{H}$',TX{:},FSm{:});
-            xlab.Position(2)=-1.02;
+            xlab=xlabel('$\frac{x}{H}$',TX{:},FSl{:});
+            xlab.Position(1:2)=[1.5,-1.07];
             if K==2
                 cbar=colorbar;
                 cbar.Location= 'southoutside';
                 cbar.LineWidth=LW{2};
-                cbar.FontSize=FSs{2};
+                cbar.FontSize=FSm{2};
                 cbar.TickLabelInterpreter=TX{2};
                 cbar.Limits=[-20 20];
                 cbar.Ticks=-20:5:20;
             end
         end
     end
-    title1.FontSize=12;
-    title2.FontSize=12;
-    title3.FontSize=12;
+    title1.FontSize=14;
+    title2.FontSize=14;
+    title3.FontSize=14;
     t1.TileSpacing='compact';
     t1.Padding='none';
     drawnow
     
     f1.WindowStyle='normal';
     f1.Units=UN{2};
-    f1.Position=[0 0 20 10];
+    f1.Position=[0 0 20 11];
     print(strcat(path_spec,'MOR_growth_combined_shallow_dip'),output_format)
     
 end

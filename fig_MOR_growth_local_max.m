@@ -57,9 +57,11 @@ for J=1:3
 
         cbar.Location= 'southoutside';
         cbar.LineWidth=LW{2};
-        cbar.FontSize=FSs{2};
+        cbar.FontSize=FSm{2};
         cbar.TickLabelInterpreter=TX{2};
     end
+    
+        
     
     nexttile
     ax{J,2}=gca; hold on;
@@ -71,7 +73,7 @@ for J=1:3
         cbar=colorbar;
         cbar.Location= 'southoutside';
         cbar.LineWidth=LW{2};
-        cbar.FontSize=FSs{2};
+        cbar.FontSize=FSm{2};
         cbar.TickLabelInterpreter=TX{2};
     end
     
@@ -84,7 +86,7 @@ for J=1:3
         cbar=colorbar;
         cbar.Location= 'southoutside';
         cbar.LineWidth=LW{2};
-        cbar.FontSize=FSs{2};
+        cbar.FontSize=FSm{2};
         cbar.TickLabelInterpreter=TX{2};
     end
     h=contour(ax{J,2},x,z,M_s_total_end,[7 7],'-- m',LW{:});
@@ -97,10 +99,11 @@ for J=1:9
     plot(ax{J},[0 1/tan(pi/2-par.theta1)],[0 -1],'k',LW{:});
     ax{J}.XTick=[0:0.5:1.5];
     ax{J}.YTick=[-1:0.5:0];
-    ax{J}.FontSize=FSs{2};
+    ax{J}.FontSize=FSm{2};
     ax{J}.TickLabelInterpreter=TX{2};
     ax{J}.LineWidth=LW{2};
     set(ax{J} ,'Layer', 'Top')
+    
 end
 title(ax{1,1},'Amplitude: $s_\mathrm{total}$',TX{:},FSm{:})
 title(ax{1,2},'Global:  $\theta$',TX{:},FSm{:})
@@ -109,6 +112,14 @@ txt1=text(ax{1,1},0.4,-0.1,'(a): fast melt velocity',TX{:},FSm{:});
 txt2=text(ax{2,1},0.4,-0.1,'(b): ref. melt velocity',TX{:},FSm{:});
 txt3=text(ax{3,1},0.4,-0.1,'(c): slow melt velocity',TX{:},FSm{:});
 
+for J=1:3
+    ylab=ylabel(ax{J},'$\frac{z}{H}$',TX{:},FSl{:},'Rotation',0);
+    ylab.Position(1:2)=[-0.1 -0.3];
+end
+for J=3:3:9
+    xlab=xlabel(ax{J},'$\frac{x}{H}$',TX{:},FSl{:});
+    xlab.Position(2)=-1.05;
+end
 t1.TileSpacing='none';
 t1.Padding='compact';
 drawnow

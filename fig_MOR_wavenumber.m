@@ -68,18 +68,18 @@ for J=1:4
         cbar=colorbar;
         cbar.Location= 'eastoutside';
         cbar.LineWidth=LW{2};
-        cbar.FontSize=FSs{2};
+        cbar.FontSize=FSm{2};
         cbar.TickLabelInterpreter=TX{2};
         cbar.Limits=[0 2];
         cbar.Ticks=0:0.5:2;
-        set(get(cbar,'Title'),'String','$k$',TX{:},FSs{:})
+        set(get(cbar,'Title'),'String','$k$',TX{:},FSm{:})
     end
     axis equal
     box on
     ax=gca;
     ax.XTick=[0:0.5:1.5];
     ax.YTick=[-1:0.5:0];
-    ax.FontSize=FSs{2};
+    ax.FontSize=FSm{2};
     ax.TickLabelInterpreter=TX{2};
     ax.LineWidth=LW{2};
     switch J
@@ -95,10 +95,10 @@ for J=1:4
         case 4
             %title('$s_\mathrm{shear}$',TX{:},FSm{:});
             text(0.85,-0.1,'(d): $\theta_0=-\pi/4$',TX{:},FSm{:});
-            xlab=xlabel('$\frac{x}{H}$',TX{:},FSm{:});
-            xlab.Position(2)=-1.02;
+            xlab=xlabel('$\frac{x}{H}$',TX{:},FSl{:});
+            xlab.Position(2)=-1.1;
     end
-    ylab=ylabel('$\frac{z}{H}$',TX{:},FSm{:},'Rotation',0);
+    ylab=ylabel('$\frac{z}{H}$',TX{:},FSl{:},'Rotation',0);
     ylab.Position(1:2)=[-0.1 -0.3];
     t1.TileSpacing='none';
 t1.Padding='compact';

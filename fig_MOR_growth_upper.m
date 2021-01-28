@@ -69,7 +69,7 @@ for J=1:2
     cbar=colorbar;
     cbar.Location= 'eastoutside';
     cbar.LineWidth=LW{2};
-    cbar.FontSize=FSs{2};
+    cbar.FontSize=FSm{2};
     cbar.TickLabelInterpreter=TX{2};
     cbar.Limits=[levels(1) levels(end)];
     cbar.Ticks=levels(1:5:end);
@@ -78,19 +78,19 @@ for J=1:2
     plot([0 1/tan(pi/2-par.theta1)],[0 -1],'k',LW{:});
     ax.XTick=[0:0.5:1.5];
     ax.YTick=[-1:0.5:0];
-    ax.FontSize=FSs{2};
+    ax.FontSize=FSm{2};
     
     switch J
         case 1
-            title('$s_\mathrm{reaction}$',TX{:},FSm{:});
+            title('$s_\mathrm{reaction}$',TX{:},FSl{:});
             text(1.39,-0.06,'(a)',TX{:},FSm{:});
         case 2
-            title('$s_\mathrm{shear}$',TX{:},FSm{:});
+            title('$s_\mathrm{shear}$',TX{:},FSl{:});
             text(1.39,-0.06,'(b)',TX{:},FSm{:});
-            xlab=xlabel('$\frac{x}{H}$',TX{:},FSm{:});
+            xlab=xlabel('$\frac{x}{H}$',TX{:},FSl{:});
             xlab.Position(2)=-1.02;
     end
-    ylab=ylabel('$\frac{z}{H}$',TX{:},FSm{:},'Rotation',0);
+    ylab=ylabel('$\frac{z}{H}$',TX{:},FSl{:},'Rotation',0);
     ylab.Position(1:2)=[-0.1 -0.3];
     
     ax.TickLabelInterpreter=TX{2};

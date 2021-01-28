@@ -71,15 +71,15 @@ for x0=vx0
     plot(k_theta*180/pi,z*depth_scale,LW{:},'DisplayName',title_str{x0==vx0})
     set(gca,'YLim',[-depth_scale,0])
     ax{numel(vx0)+1}=gca;
-    xlabel('$\theta$ (degrees)',TX{:},FSm{:});
+    xlabel('$\theta$ (degrees)',TX{:},FSl{:});
     l2=legend;
     l2.Location='southwest';
-        title1=title('(d) wavevector orientation',TX{:},FSm{:});
+        title1=title('(d) wavevector orientation',TX{:},FSl{:});
 
     
 end
 for K=1:numel(vx0)+1
-    ax{K}.FontSize=FSs{2};
+    ax{K}.FontSize=FSm{2};
     ax{K}.TickLabelInterpreter=TX{2};
     ax{K}.LineWidth=LW{2};
     box(ax{K},'on')
@@ -100,5 +100,5 @@ drawnow
 
 f1.WindowStyle='normal';
 f1.Units=UN{2};
-f1.Position=[0 0 20 6];
+f1.Position=[0 0 20 6.5];
 print(strcat(path_spec,'MOR_summary'),output_format)

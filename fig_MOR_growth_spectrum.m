@@ -15,7 +15,7 @@ vs_react=zeros(1,numel(vkx0));
 vs_shear=zeros(1,numel(vkx0));
 vkx=zeros(1,numel(vkx0));
 vkz=zeros(1,numel(vkx0));
-vx0=[0.01, 0.2];
+vx0=[0.2, 0.5];
 ax=cell(2,2);
 for K=1:2
     
@@ -86,18 +86,18 @@ t1.TileSpacing = 'compact';
 for K=1:numel(ax)
     ax{K}.TickLabelInterpreter=TX{2};
     set(ax{K},'XLim',[-pi/2 pi/2])
-    set(ax{K},FSms{:})
+    set(ax{K},FSm{:})
     set(ax{K},LW{:})
     set(ax{K},'XTick',[-pi/2, -3*pi/8 -pi/4, -pi/8, 0, pi/8 pi/4, 3*pi/8, pi/2])
     if K<=2
         set(ax{K},'YTick',[- 20 :10:40],'YLim',[- 20 40]);
-        ylab=ylabel(ax{K},'$s$',FSms{:},TX{:},'Rotation',0);
+        ylab=ylabel(ax{K},'$s$',FSm{:},TX{:},'Rotation',0);
     else
         set(ax{K},'YTick',[-3*pi/4, -pi/2, -pi/4, 0,pi/4],'YLim',[- 3*pi/4 1.3*pi/4]);
         set(ax{K},'YTickLabel',{'$-3\pi/4$','$-\pi/2$','$-\pi/4$','$0$','$\pi/4$'});
-        ylab=ylabel(ax{K},'$\theta_1$',FSms{:},TX{:},'Rotation',0);
+        ylab=ylabel(ax{K},'$\theta_1$',FSm{:},TX{:},'Rotation',0);
     end
-    xlab=xlabel(ax{K},'Initial angle: $\theta_0$',FSms{:},TX{:});
+    xlab=xlabel(ax{K},'Initial angle: $\theta_0$',FSm{:},TX{:});
     set(ax{K},'Layer','top')
     %  set(ax{K},'XTickLabel',{'$-\pi/2$', '$-3\pi/8$','$-\pi/4$','$-\pi/8$','$0$','$\pi/8$','$\pi/4$', '$3\pi/8$', '$\pi/2$'});
     set(ax{K},'XTickLabel',{'$-\pi/2$', [],'$-\pi/4$',[],'$0$',[],'$\pi/4$', [], '$\pi/2$'});
@@ -105,11 +105,11 @@ end
 
 
 l=legend(ax{1});
-l.FontSize=FSms{2};
+l.FontSize=FSm{2};
 l.Interpreter=TX{2};
 l.ItemTokenSize(1)=10;
-text(ax{1},-1.5,35,'(a): Near ridge axis',FSms{:},TX{:});
-text(ax{2},-1.5,35,'(b): Off ridge axis',FSms{:},TX{:});
+text(ax{1},-1.5,35,'(a): Near ridge axis',FSm{:},TX{:});
+text(ax{2},-1.5,35,'(b): Off ridge axis',FSm{:},TX{:});
 
 f1.Units='centimeters';
 f1.Position=[0 0 20 10];

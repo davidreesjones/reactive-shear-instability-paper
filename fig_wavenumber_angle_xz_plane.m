@@ -60,9 +60,10 @@ for theta_e = vtheta_e
         l.Location="northwest";
         l.Interpreter='latex';
         l.ItemTokenSize(1)=20;
+        l.FontSize=FSs{2};
     end
     lab=text(theta_e+0.05,-1+0.1,'$\theta_e$');
-    set(lab,FSs{:},TX{:})
+    set(lab,FSm{:},TX{:})
     A1.LineStyle='none';
     A1.FaceColor=[0 0 1];
     A1.FaceAlpha=0.1;
@@ -80,16 +81,16 @@ t.Padding='compact';
 for I=1:numel(ax)
     ax{I}.TickLabelInterpreter=TX{2};
     set(ax{I},'XLim',[-pi/2 pi/2],'YLim',[- 1 1])
-    set(ax{I},FSs{:})
+    set(ax{I},FSm{:})
     set(ax{I},LW{:})
     set(ax{I},'XTick',[-pi/2, -3*pi/8 -pi/4, -pi/8, 0, pi/8 pi/4, 3*pi/8, pi/2],'YTick',[- 1 -0.5 0 0.5 1]);
     set(ax{I},'Layer','top')
     set(ax{I},'XTickLabel',{'$-\pi/2$', '$-3\pi/8$','$-\pi/4$','$-\pi/8$','$0$','$\pi/8$','$\pi/4$', '$3\pi/8$', '$\pi/2$'});
 end
-%title(t,'Normalized growth rate for modes restricted to $x$--$z$ plane',FSs{:},TX{:})
-ylabel(t,'Normalized growth rate: $\mathrm{real}(\sigma) / \max\limits_\theta \mathrm{real}(\sigma)$ ',FSs{:},TX{:})
+%title(t,'Normalized growth rate for modes restricted to $x$--$z$ plane',FSm{:},TX{:})
+ylabel(t,'Normalized growth rate: $\mathrm{real}(\sigma) / \max\limits_\theta \mathrm{real}(\sigma)$ ',FSm{:},TX{:})
 
 f.Units='centimeters';
-f.Position=[0 0 10 10];
+f.Position=[0 0 10 11];
 
 print(strcat(path_spec,'wavenumber_angle_xz_plane'),output_format)
