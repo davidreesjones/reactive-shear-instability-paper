@@ -52,5 +52,10 @@ fig_MOR_growth_combined_shallow_dip
 % Figure 15 - Showing summary for discussion section
 fig_MOR_summary
 
-% Figure A1 - Showing alternative wavevector maximization procedure
+% Figure A1 - Showing effect of pressure-dependant solubility gradient
+% in terms of the dependence of growth rate on angle of wavenumber
+% restricted to x-z plane
+fig_wavenumber_angle_xz_plane_A
+
+% Figure A2 - Showing alternative wavevector maximization procedure
 fig_MOR_growth_local_max
