@@ -58,4 +58,5 @@ fig_MOR_summary
 fig_wavenumber_angle_xz_plane_A
 
 % Figure A2 - Showing alternative wavevector maximization procedure
+% N.B. long computation time
 fig_MOR_growth_local_max
