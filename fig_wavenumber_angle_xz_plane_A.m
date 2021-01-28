@@ -2,7 +2,7 @@
 vtheta_e=pi/2*[0.25 0.75]; 
 
 %% Set-up
-f=figure(3); clf;
+f=figure(16); clf;
 load_colormap
 theta=linspace(-pi,pi,1e3);
 t=tiledlayout(numel(vtheta_e),1);
