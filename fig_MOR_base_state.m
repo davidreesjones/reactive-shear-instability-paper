@@ -112,7 +112,7 @@ for J=1:3
     switch J
         case 1
             title('Normalized magma velocity: $w_0/U_0$',TX{:},FSm{:});
-            text(1.39,-0.06,'(b)',TX{:},FSl{:});
+            text(1.39,-0.06,'(b)',TX{:},FSm{:});
         case 2
             title('Porosity: $\phi_0$',TX{:},FSm{:});
             text(1.39,-0.06,'(c)',TX{:},FSm{:});
