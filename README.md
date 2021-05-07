@@ -1,7 +1,9 @@
 ## Software: Reactive and shear-driven instabilities at MORs
 
 ## REFERENCE: 
-This software reproduces the calculations and figures in an accompanying paper. Please cite the accompanying paper in any publications based on this software. 
+Software reproduces the calculations and figures in an accompanying paper. Please cite the accompanying paper: 
+
+D W Rees Jones, H Zhang, R F Katz, Magmatic channelization by reactive and shear-driven instabilities at mid-ocean ridges: a combined analysis, Geophysical Journal International, Volume 226, Issue 1, July 2021, Pages 582–609, [https://doi.org/10.1093/gji/ggab112](https://doi.org/10.1093/gji/ggab112) 
 
 
 ## INSTRUCTIONS:
