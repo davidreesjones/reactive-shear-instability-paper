@@ -44,9 +44,10 @@ for theta_e=vtheta_e
     ylabel('$\mathrm{real}(\sigma)/\sigma_\mathrm{reaction} $',TX{:},FS{:})
     if theta_e==vtheta_e(end)
         xlabel('$(k\delta)^2$',TX{:},FS{:})
+        set(ax,'YLim',[-0.5,1.5])
     end
     ax.TickLabelInterpreter=TX{2};
-    set(ax,FSs{:})
+    set(ax,FSm{:})
     set(ax,'LineWidth',1)
     set(ax,'Layer','top')
     
@@ -57,13 +58,14 @@ l.Interpreter=TX{2};
 l.ItemTokenSize(1)=20;
 l_title=title(l,{'$S=0.2$ {(solid)}', '$S=1$ (dash)'});
 l_title.Interpreter=TX{2};
+l.FontSize=FSms{2};
 
 
 
 
 % title(t,TX{:},FSs{:})
 f.Units='centimeters';
-f.Position=[0 0 10 12];
+f.Position=[0 0 10 13];
 
 t.TileSpacing = 'compact';
 t.Padding='compact';
